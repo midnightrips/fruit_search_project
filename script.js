@@ -7,10 +7,11 @@ function search(str) {
 	let results = [];
 
 	// TODO
-	
+
 	let lowerCaseStr = str.toLowerCase(); //makes the search case insensitive
 	results = fruit.filter(item => item.toLowerCase().includes(lowerCaseStr)); //if any of the items in the array include the string add to results array
-
+	
+	showSuggestions(results, str); //call showsuggestions to create a dropdown
 
 	return results;
 }
@@ -26,10 +27,30 @@ function searchHandler(e) {
 function showSuggestions(results, inputVal) {
 
 	// TODO
+	suggestions.innerHTML = ''; //clear previous results
+	
+	//create and append lis for each result
+	results.forEach(result => {
+		let li = document.createElement('li');
+		li.innerText = result;
+		suggestions.appendChild(li);
+
+		li.addEventListener('mouseover', function() {
+			li.classList.add('highlight');
+		});
+		
+		li.addEventListener('mouseout', function() {
+			li.classList.remove('highlight');
+		});
+	});
+	
+	
 }
 
 function useSuggestion(e) {
 	// TODO
+	let suggestion = e.target.innerText;
+	input.value = suggestion; //change the input innerText to the innertext of the item clicked
 }
 
 input.addEventListener('keyup', searchHandler);

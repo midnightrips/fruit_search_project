@@ -39,6 +39,7 @@ ul li {
 }
 ul li:hover {
   /* TODO */
+  background-color: #d3d3d3;
 }
 
 input {
