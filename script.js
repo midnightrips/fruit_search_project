@@ -7,12 +7,20 @@ function search(str) {
 	let results = [];
 
 	// TODO
+	
+	let lowerCaseStr = str.toLowerCase(); //makes the search case insensitive
+	results = fruit.filter(item => item.toLowerCase().includes(lowerCaseStr)); //if any of the items in the array include the string add to results array
+
 
 	return results;
 }
 
 function searchHandler(e) {
 	// TODO
+	
+    let userInput = e.target.value; // Get the current value of the input field
+
+	search(userInput); //call search function by passing in the string inputted
 }
 
 function showSuggestions(results, inputVal) {
