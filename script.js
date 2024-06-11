@@ -19,7 +19,7 @@ function search(str) {
 function searchHandler(e) {
 	// TODO
 	
-    let userInput = e.target.value; // Get the current value of the input field
+    let userInput = e.target.value;
 
 	search(userInput); //call search function by passing in the string inputted
 }
@@ -28,29 +28,32 @@ function showSuggestions(results, inputVal) {
 
 	// TODO
 	suggestions.innerHTML = ''; //clear previous results
-	
-	//create and append lis for each result
+
 	results.forEach(result => {
 		let li = document.createElement('li');
 		li.innerText = result;
 		suggestions.appendChild(li);
 
-		li.addEventListener('mouseover', function() {
-			li.classList.add('highlight');
-		});
+
+		//was going to add css class for highlighting but the hover is already inputted in css
+		// li.addEventListener('mouseover', function() {
+		// 	li.classList.add('highlight');
+		// });
 		
-		li.addEventListener('mouseout', function() {
-			li.classList.remove('highlight');
-		});
+		// li.addEventListener('mouseout', function() {
+		// 	li.classList.remove('highlight');
+		// });
 	});
-	
-	
 }
 
 function useSuggestion(e) {
 	// TODO
 	let suggestion = e.target.innerText;
 	input.value = suggestion; //change the input innerText to the innertext of the item clicked
+	if(input.value === suggestion) {
+		suggestions.style.display = 'none';
+	}
+	//need to call search again so that the drop-down reappears if something is typed again
 }
 
 input.addEventListener('keyup', searchHandler);

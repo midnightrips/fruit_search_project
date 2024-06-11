@@ -1,48 +1,84 @@
 * {
   box-sizing: border-box;
-  background: linear-gradient(to right, orange, yellow);
 }
 
 :focus {
  /* TODO */
+  outline: none;
+  box-shadow: none;
 }
 
 body {
   /* TODO */
+  background: linear-gradient(to right, orange, yellow); /*had to move this here from * in order to maintain the highlight function when hovering over each element*/
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 input {
  /* TODO */
+  background: linear-gradient(to right, orange, yellow);
+  border: none;
+  border-bottom: 1px orange;
+  padding: 5px;
 }
 
 .search-container {
  /* TODO */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 .search-container input,
 .search-container .suggestions {
   /* TODO */
+  width: 100%;
 }
 .search-container input {
  /* TODO */
+  
+  
 }
 .search-container .suggestions {
    /* TODO */
+  margin: 0px;
+  position: absolute;
 }
 
 ul {
   /* TODO */
+  top: 32px; 
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 250px; /* prevents the drop down from overflowing */
+  overflow-y: auto; /* creates a scroll bar for the drop down if there are too many items */
+  padding: 0;
+  margin: 0;
+  background-color: orange;
+  border: none;
+
 }
 ul.has-suggestions {
   /* TODO */
 }
+
 ul li {
   /* TODO */
+  padding: 5px;
+  list-style: none;
+  border: 1px;
 }
 ul li:hover {
   /* TODO */
-  background-color: #d3d3d3;
-}
-
-input {
-   /* TODO */
+  background-color: orangered !important;
 }
