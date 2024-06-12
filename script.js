@@ -27,7 +27,6 @@ function searchHandler(e) {
 function showSuggestions(results, inputVal) {
 
 	// TODO
-	suggestions.innerHTML = ''; //clear previous results
 
 	results.forEach(result => {
 		let li = document.createElement('li');
@@ -35,7 +34,7 @@ function showSuggestions(results, inputVal) {
 		suggestions.appendChild(li);
 
 
-		//was going to add css class for highlighting but the hover is already inputted in css
+		//was going to add css class for highlighting but the hover is already created in css file
 		// li.addEventListener('mouseover', function() {
 		// 	li.classList.add('highlight');
 		// });
